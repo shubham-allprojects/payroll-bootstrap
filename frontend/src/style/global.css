@@ -28,8 +28,7 @@ body {
 }
 
 p {
-  margin-bottom: 10px !important;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 span {
@@ -335,6 +334,10 @@ label {
   justify-content: space-between;
   height: fit-content; */
   background: #abc9ff;
+}
+
+#footer .footer-contact p {
+  margin-bottom: 8px !important;
 }
 
 /* .footerContent {

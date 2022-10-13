@@ -68,8 +68,9 @@ const Layout = ({ children }) => {
                   </div>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-12 mt-5">
+              <hr />
+              <div className="row py-2">
+                <div className="col-12 text-center text-md-start">
                   <p>Copyright © 2022 uvXcel - All Rights Reserved</p>
                 </div>
               </div>

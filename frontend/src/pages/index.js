@@ -116,7 +116,14 @@ export default function Home() {
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="/imgg4.jpg" alt="First slide" />
+              <img class="d-block w-100" src="/imgg4.jpg" alt="First slide" />{" "}
+              <div class="carousel-caption d-none d-md-block">
+                <h5>UVXCEL - UNITED WE EXCEL!</h5>
+                <p>
+                  Payroll management system of uvXcel provides the detailed
+                  information of payroll of every employee anytime anywhere.
+                </p>
+              </div>
             </div>
             <div class="carousel-item">
               <img
@@ -124,9 +131,26 @@ export default function Home() {
                 src="/account.jpg"
                 alt="Second slide"
               />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Accounting and Payroll</h5>
+                <p>
+                  Payroll accounting is essentially the calculation, management,
+                  recording, and analysis of employees' compensation.
+                </p>
+              </div>
             </div>
             <div class="carousel-item">
-              <img class="d-block w-100" src="/eccom.jpg" alt="Third slide" />
+              <img class="d-block w-100" src="/eccom.jpg" alt="Third slide" />{" "}
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Ecommerce</h5>
+                <p>
+                  eCommerce Product Development and Integration eCommerce
+                  Platform Analysis, Fitment, Recommendations eCommerce Platform
+                  Services and Implementation Omni-Channel Implementation
+                  Integrations with Back office Systems like WMS, OMS, ERP,
+                  Logistics
+                </p>
+              </div>
             </div>
             <div class="carousel-item">
               <img
@@ -134,6 +158,13 @@ export default function Home() {
                 src="/project.jpg"
                 alt="Fourth slide"
               />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Projects</h5>
+                <p>
+                  1. React Js 2. Mongo DB 3. Business Intelligence 4.
+                  Application Development 5. Data Architecture
+                </p>
+              </div>
             </div>
             {/* <div class="carousel-item">
               <img
@@ -178,7 +209,7 @@ export default function Home() {
       <section id="dms" className="dms-wrapper wrapper-padding">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-7 col-md-8">
+            <div className="col-lg-6 col-md-8">
               <h2>Welcome to DMS for uvXcel</h2>
               <p>
                 Document Managment System for uvXcel provides easy access to all
@@ -188,7 +219,7 @@ export default function Home() {
                 of Companies, Pune.
               </p>
             </div>
-            <div className="col-lg-5 col-md-4 mt-4 mt-md-0">
+            <div className="col-lg-6 col-md-4 mt-4 mt-md-0">
               <div className="text-md-end text-center img-div-dms">
                 <img
                   src="/hero-img.png"
