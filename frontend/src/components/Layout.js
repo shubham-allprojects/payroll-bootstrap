@@ -44,11 +44,11 @@ const Layout = ({ children }) => {
               <p className="no">Phone: +91-20-6706259</p>
             </div>
           </div> */}
-          <footer id="footer">
+          <footer id="footer" className="footer">
             <div className="container">
               <div className="row py-4">
                 <div className="col-lg-4 col-md-5 text-center text-md-start">
-                  <img
+                  {/* <img
                     src="/logo1.png"
                     alt="logo"
                     className="img-fluid"
@@ -57,9 +57,10 @@ const Layout = ({ children }) => {
                   <p className="mt-2">
                     We aim to emerge as the Preferred technology partner for our
                     client.
-                  </p>
+                  </p> */}
+                  <p>Copyright © 2022 uvXcel - All Rights Reserved</p>
                 </div>
-                <div className="offset-lg-5 offset-md-2 col-lg-3 col-md-5 mt-md-3 mt-lg-0 text-center text-md-start">
+                <div className="offset-lg-5 offset-md-2 col-lg-3 col-md-5 text-center text-md-start">
                   <div className="footer-contact">
                     <p>
                       Email : <a href="mailto:hr@uvxcel.com">hr@uvxcel.com</a>
@@ -68,12 +69,12 @@ const Layout = ({ children }) => {
                   </div>
                 </div>
               </div>
-              <hr />
-              <div className="row py-2">
+              {/* <hr /> */}
+              {/* <div className="row py-2">
                 <div className="col-12 text-center text-md-start">
                   <p>Copyright © 2022 uvXcel - All Rights Reserved</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </footer>
         </div>

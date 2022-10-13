@@ -206,7 +206,7 @@ export default function Home() {
         </div>
         <img src="/hero-img.png" alt="site banner" class="img" />
       </section> */}
-      <section id="dms" className="dms-wrapper wrapper-padding">
+      <section id="dms" className="dms-wrapper wrapper-padding wrapper">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-6 col-md-8">
