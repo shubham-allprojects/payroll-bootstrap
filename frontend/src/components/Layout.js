@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
                     client.
                   </p>
                 </div>
-                <div className="offset-lg-5 offset-md-1 col-lg-3 col-md-6 mt-md-3 mt-lg-0 text-center text-md-start">
+                <div className="offset-lg-5 offset-md-2 col-lg-3 col-md-5 mt-md-3 mt-lg-0 text-center text-md-start">
                   <div className="footer-contact">
                     <p>
                       Email : <a href="mailto:hr@uvxcel.com">hr@uvxcel.com</a>

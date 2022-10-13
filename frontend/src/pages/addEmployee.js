@@ -76,10 +76,10 @@ export default function addEmployee() {
               <p>Upload CSV file here.</p>
             </div>
           </div> */}
-          <div className="container superadmin-profile-wrapper">
+          <div className="container superadmin-profile-wrapper wrapper-padding">
             <div className="row justify-content-center">
               <div className="col-12">
-                <div className="card mt-5">
+                <div className="card">
                   <div className="card-body">
                     <h1 className="card-title text-center">
                       Welcome to Super Admin Page
