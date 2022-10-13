@@ -117,7 +117,7 @@ function ColorSchemesExample() {
             <img
               src="/logo1.png"
               alt="logo"
-              className=""
+              className="img-fluid"
               style={{ height: "58px", width: "160px" }}
             />
           </a>

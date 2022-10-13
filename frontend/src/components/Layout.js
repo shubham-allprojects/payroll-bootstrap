@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
         <div className="layout">
           <NavBar />
           {children}
-          <div id="footer">
+          {/* <div id="footer">
             <div className="copyright">
               <p className="footerContent">
                 Copyright © 2022 uvXcel - All Rights Reserved
@@ -43,7 +43,38 @@ const Layout = ({ children }) => {
               </p>
               <p className="no">Phone: +91-20-6706259</p>
             </div>
-          </div>
+          </div> */}
+          <footer id="footer">
+            <div className="container">
+              <div className="row py-4">
+                <div className="col-lg-4 col-md-5 text-center text-md-start">
+                  <img
+                    src="/logo1.png"
+                    alt="logo"
+                    className="img-fluid"
+                    style={{ height: "78px", width: "180px" }}
+                  />
+                  <p className="mt-2">
+                    We aim to emerge as the Preferred technology partner for our
+                    client.
+                  </p>
+                </div>
+                <div className="offset-lg-5 offset-md-1 col-lg-3 col-md-6 mt-md-3 mt-lg-0 text-center text-md-start">
+                  <div className="footer-contact">
+                    <p>
+                      Email : <a href="mailto:hr@uvxcel.com">hr@uvxcel.com</a>
+                    </p>
+                    <p className="">Phone: +91-20-6706259</p>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 mt-5">
+                  <p>Copyright © 2022 uvXcel - All Rights Reserved</p>
+                </div>
+              </div>
+            </div>
+          </footer>
         </div>
       </UserData.Provider>
     </>

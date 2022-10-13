@@ -8,6 +8,9 @@
 
 .wrapper {
   min-height: 100vh;
+}
+
+.wrapper-padding {
   padding: 4rem 0;
 }
 
@@ -25,8 +28,7 @@ body {
 }
 
 p {
-  margin: 16px auto;
-  line-height: 1.5em;
+  margin-bottom: 10px !important;
   font-size: 22px;
 }
 
@@ -326,16 +328,16 @@ label {
 /*Footer code*/
 
 #footer {
-  bottom: 0;
-  /* position: fixed; */
+  /* bottom: 0;
+  position: fixed;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  height: fit-content;
+  height: fit-content; */
   background: #abc9ff;
 }
 
-.footerContent {
+/* .footerContent {
   font-size: 21px;
 }
 
@@ -343,7 +345,7 @@ label {
   padding: 10px 0;
   margin: 0px 0px 0px 50px;
   font-weight: 500;
-}
+} */
 /*Footer END*/
 
 .relationClass {
