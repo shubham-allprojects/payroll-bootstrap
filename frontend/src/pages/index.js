@@ -125,7 +125,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            {/* <div class="carousel-item">
+            <div class="carousel-item">
               <img
                 class="d-block w-100"
                 src="/account.jpg"
@@ -165,7 +165,7 @@ export default function Home() {
                   Application Development 5. Data Architecture
                 </p>
               </div>
-            </div> */}
+            </div>
             {/* <div class="carousel-item">
               <img
                 class="d-block w-100"
