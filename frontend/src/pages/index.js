@@ -117,15 +117,15 @@ export default function Home() {
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img class="d-block w-100" src="/imgg4.jpg" alt="First slide" />{" "}
-              <div class="carousel-caption d-none d-md-block">
-                <h5>UVXCEL - UNITED WE EXCEL!</h5>
-                <p>
+              <div class="carousel-caption first-slide-carousel-caption d-none d-md-block">
+                <h1 className="fw-bolder">UVXCEL - UNITED WE EXCEL!</h1>
+                <p className="fw-bold">
                   Payroll management system of uvXcel provides the detailed
                   information of payroll of every employee anytime anywhere.
                 </p>
               </div>
             </div>
-            <div class="carousel-item">
+            {/* <div class="carousel-item">
               <img
                 class="d-block w-100"
                 src="/account.jpg"
@@ -165,7 +165,7 @@ export default function Home() {
                   Application Development 5. Data Architecture
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* <div class="carousel-item">
               <img
                 class="d-block w-100"

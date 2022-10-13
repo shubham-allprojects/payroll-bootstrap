@@ -445,6 +445,10 @@ input .larger {
 }
 /* carousel */
 
+.home-carousel-wrapper .first-slide-carousel-caption {
+  bottom: 34% !important;
+}
+
 .home-carousel-wrapper .carousel-inner {
   height: 88vh;
 }
@@ -1060,6 +1064,10 @@ H .box {
 }
 
 @media screen and (max-width: 992px) {
+  .home-carousel-wrapper .first-slide-carousel-caption {
+    bottom: 25% !important;
+  }
+
   .home-carousel-wrapper .carousel-inner {
     height: 40vh;
   }
