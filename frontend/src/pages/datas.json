@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Priya Sawant",
+    "empId": "UISPL0058",
+    "email": "priyas@uvxcel.com",
+    "dob": "",
+    "contactNo": 9975295911,
+    "gender": "Female",
+    "joiningDate": "14/6/2022",
+    "probationPeriod": "7 Months",
+    "confirmationDate": "10/13/2021",
+    "designation": "Software Development",
+    "location": "Pune",
+    "department": "Software Engineer",
+    "role": "Super Admin",
+    "workMode": "Work from home",
+    "numberOfMember": 5,
+    "status": "Married",
+    "NameofSpouse": "Prajyot Hatipkar",
+    "relationship": "Husband",
+    "child1": "Pravee Hatipkar",
+    "pan": "BKFPK3210E",
+    "pf": "234567898766",
+    "tempPassword": "$2a$10$YVlj2p39gnp9EFxSLkAdIOY4ITntprXi03flZUnMsKXdPFY6P6Mom",
+    "paymentType": "NEFT Bank",
+    "bankName": "Kotak ",
+    "bankBranch": "Thane ",
+    "ifscCode": "FGHY12345437",
+    "accountNumber": 7678546348,
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1665557620447"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1665557620447"
+      }
+    }
+  },
+  {
+    "name": "Amol Mestry",
+    "empId": "UISPL0068",
+    "email": "amolm@uvxcel.com",
+    "dob": "",
+    "contactNo": 9975575910,
+    "gender": "male",
+    "joiningDate": "14/6/2021",
+    "probationPeriod": "6 Months",
+    "confirmationDate": "10/12/2021",
+    "designation": "Software Development",
+    "location": "Pune",
+    "department": "Software Engineer",
+    "role": "Hr Admin",
+    "workMode": "Work from home",
+    "numberOfMember": 4,
+    "status": "Married",
+    "NameofSpouse": "Prajyot Hatipkar",
+    "relationship": "Husband",
+    "child1": "Pravee Hatipkar",
+    "pan": "BKFPK3210E",
+    "pf": "234567898765",
+    "tempPassword": "$2a$10$jh0VItdtNkFtlUXcB1Q9b.x3egrjufQaksHQZQt1q1eaSisVmlEY.",
+    "paymentType": "NEFT Bank",
+    "bankName": "Kotak ",
+    "bankBranch": "Thane ",
+    "ifscCode": "FGHY12345436",
+    "accountNumber": 7678546347,
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1665557619194"
+      }
+    },
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1665557619194"
+      }
+    }
+  }
+]
