@@ -687,24 +687,27 @@ td {
 
 #sidebar {
   background-color: #fae3f7;
-  width: fit-content;
+  width: 100%;
   border-right: 1px solid gray;
 }
 
 #sidebar-wrapper {
   padding-top: 3.5rem;
   font-size: 23px;
-  flex: 8 0 auto;
-  width: 365px;
+  /* flex: 8 0 auto;
+  width: 365; */
+}
+.container-fluid{
+  padding-left: 0 !important;
 }
 
-.btn-primary {
+/* .btn-primary {
   --bs-btn-color: #fff;
   text-align: center !important;
   --bs-btn-bg: navy !important;
   --bs-btn-border-color: navy !important;
   width: 115px !important;
-}
+} */
 
 .countryCode {
   width: 140px;
@@ -1068,7 +1071,7 @@ H .box {
 
 .bulk-emp-table-div {
   display: none;
-  width: 70vw;
+  /* width: 70vw; */
   overflow-x: scroll !important;
 }
 

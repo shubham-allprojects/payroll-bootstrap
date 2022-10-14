@@ -18,10 +18,10 @@ function AddBulkEmployee() {
 
   const onClearBtnClick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
-
     document.getElementById("bulk-file").value = ""
     document.getElementById("table-wrapper").style.display = "none"
     document.getElementById("save-clear-btns").style.display = "none"
+    document.getElementById("table-info-heading").classList.add("d-none")
   }
 
   // On Save btn click
@@ -117,128 +117,139 @@ function AddBulkEmployee() {
         // Display Table Div
         document.getElementById("table-wrapper").style.display = "block"
         document.getElementById("save-clear-btns").style.display = "block"
+        document.getElementById("table-info-heading").classList.remove("d-none")
       },
     })
   }
 
   return (
-    <div>
+    <>
       <Layout>
-        <div className="bulkEmpDiv">
-          <div
-            id="sidebar"
-            className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
-          >
-            <div id="sidebar-wrapper" className="min-vh-100">
-              <ul className="list-unstyled components">
-                <li className="navbar-item">
-                  <Link to="/addEmployee" className="nav-link">
-                    {" "}
-                    My Profile
-                  </Link>
-                </li>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-4">
+              <div
+                id="sidebar"
+                className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
+              >
+                <div id="sidebar-wrapper" className="min-vh-100">
+                  <ul className="list-unstyled components">
+                    <li className="navbar-item">
+                      <Link to="/addEmployee" className="nav-link">
+                        {" "}
+                        My Profile
+                      </Link>
+                    </li>
 
-                <li className="navbar-item">
-                  <Link to="/app/superadmin" className="nav-link">
-                    {" "}
-                    Add New Employee
-                  </Link>
-                </li>
+                    <li className="navbar-item">
+                      <Link to="/app/superadmin" className="nav-link">
+                        {" "}
+                        Add New Employee
+                      </Link>
+                    </li>
 
-                <li className="navbar-item">
-                  <Link to="/viewAllEmployee" className="nav-link">
-                    View All Employees
-                  </Link>
-                </li>
-                <li className="navbar-item tab">
-                  <Link to="/addBulkEmployee" className="nav-link">
-                    Upload Bulk Employee
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="container">
-            {/* File Uploader */}
-            <div className="row justify-content-center mt-4">
-              <div className="col-lg-6 col-md-8">
-                <div className="card shadow-lg p-4">
-                  <h2>Upload Bulk Employee Information</h2>
-
-                  <input
-                    id="bulk-file"
-                    type="file"
-                    name="file"
-                    className="form-control"
-                    onChange={changeHandler}
-                    accept=".csv"
-                    style={{ display: "block", margin: "10px auto" }}
-                  />
-                  <h6 className="text-muted">Hint : Upload CSV file here.</h6>
-                  <div className="text-center">
-                    <img
-                      className="img-fluid"
-                      src="testImg2.png"
-                      alt="Sample CSV image"
-                      width="510"
-                      height="300"
-                    />
-                  </div>
-
-                  <p>Refer the Sample CSV file image</p>
+                    <li className="navbar-item">
+                      <Link to="/viewAllEmployee" className="nav-link">
+                        View All Employees
+                      </Link>
+                    </li>
+                    <li className="navbar-item tab">
+                      <Link to="/addBulkEmployee" className="nav-link">
+                        Upload Bulk Employee
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <br />
-            <br />
-            {/* Table */}
-            <div className="container " style={{ minHeight: "500vh" }}>
-              <div id="table-wrapper" className="bulk-emp-table-div">
-                <h1 className="text-center mb-4">Employee Information Table</h1>
-                <table className="table table-striped table-bordered table-sm">
-                  <thead>
-                    <tr>
-                      {tableRows.map((rows, index) => {
-                        return <th key={index}>{rows}</th>
-                      })}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {values.map((value, index) => {
-                      return (
-                        <tr key={index}>
-                          {value.map((val, i) => {
-                            return <td key={i}>{val}</td>
+            <div className="col-lg-8">
+              <div className="container">
+                {/* File Uploader */}
+                <div className="row justify-content-center mt-4">
+                  <div className="col-lg-6 col-md-8">
+                    <div className="card shadow-lg p-4">
+                      <h2>Upload Bulk Employee Information</h2>
+
+                      <input
+                        id="bulk-file"
+                        type="file"
+                        name="file"
+                        className="form-control my-3"
+                        onChange={changeHandler}
+                        accept=".csv"
+                        // style={{ display: "block", margin: "10px auto" }}
+                      />
+                      <h6 className="text-muted">
+                        Hint : Upload CSV file here.
+                      </h6>
+                      <div className="text-center">
+                        <img
+                          className="img-fluid"
+                          src="testImg2.png"
+                          alt="Sample CSV image"
+                          width="510"
+                          height="300"
+                        />
+                      </div>
+
+                      <p>Refer the Sample CSV file image</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Table */}
+                <h1 className="text-center my-4 d-none" id="table-info-heading">
+                  Employee Information Table
+                </h1>
+                <div className="row justify-content-center">
+                  <div id="table-wrapper" className="bulk-emp-table-div">
+                    <table className="table table-striped table-bordered table-sm">
+                      <thead>
+                        <tr>
+                          {tableRows.map((rows, index) => {
+                            return <th key={index}>{rows}</th>
                           })}
                         </tr>
-                      )
-                    })}
-                  </tbody>
-                </table>
-              </div>
-              <div
-                className="row my-3"
-                id="save-clear-btns"
-                style={{ display: "none" }}
-              >
-                <div className="col-4 offset-8 d-flex justify-content-end ps-5">
-                  <button
-                    className="btn btn-success"
-                    onClick={e => saveTableDataToDatabase(e)}
+                      </thead>
+                      <tbody>
+                        {values.map((value, index) => {
+                          return (
+                            <tr key={index}>
+                              {value.map((val, i) => {
+                                return <td key={i}>{val}</td>
+                              })}
+                            </tr>
+                          )
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div
+                    className="row my-3"
+                    id="save-clear-btns"
+                    style={{ display: "none" }}
                   >
-                    Save
-                  </button>
-                  <button className="btn btn-danger" onClick={onClearBtnClick}>
-                    Clear
-                  </button>
+                    <div className="col-4 offset-8 d-flex justify-content-end ps-5">
+                      <button
+                        className="btn btn-success"
+                        onClick={e => saveTableDataToDatabase(e)}
+                      >
+                        Save
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={onClearBtnClick}
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </Layout>
-    </div>
+    </>
   )
 }
 export default AddBulkEmployee
