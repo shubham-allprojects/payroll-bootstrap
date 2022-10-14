@@ -113,7 +113,7 @@ function ColorSchemesExample() {
       </Navbar> */}
       <nav className="navbar navbar-expand-lg gatsbyNav">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand ps-3" href="#">
             <img
               src="/logo1.png"
               alt="logo"

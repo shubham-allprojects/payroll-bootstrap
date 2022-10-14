@@ -163,12 +163,14 @@ function AddBulkEmployee() {
               </div>
             </div>
             <div className="col-lg-8">
-              <div className="container">
+              <div className="container wrapper-padding wrapper">
                 {/* File Uploader */}
-                <div className="row justify-content-center mt-4">
-                  <div className="col-lg-6 col-md-8">
+                <div className="row justify-content-center">
+                  <div className="col-lg-7 col-md-8">
                     <div className="card shadow-lg p-4">
-                      <h2>Upload Bulk Employee Information</h2>
+                      <h3 className="text-center">
+                        Upload Bulk Employee Information
+                      </h3>
 
                       <input
                         id="bulk-file"
@@ -196,39 +198,46 @@ function AddBulkEmployee() {
                     </div>
                   </div>
                 </div>
-                {/* Table */}
-                <h1 className="text-center my-4 d-none" id="table-info-heading">
-                  Employee Information Table
-                </h1>
+
                 <div className="row justify-content-center">
-                  <div id="table-wrapper" className="bulk-emp-table-div">
-                    <table className="table table-striped table-bordered table-sm">
-                      <thead>
-                        <tr>
-                          {tableRows.map((rows, index) => {
-                            return <th key={index}>{rows}</th>
+                  <h1
+                    className="text-center my-4 d-none"
+                    id="table-info-heading"
+                  >
+                    Employee Information Table
+                  </h1>
+                  {/* Table */}
+                  <div className="col-12 col-lg-11">
+                    <div id="table-wrapper" className="bulk-emp-table-div">
+                      <table className="table table-striped table-bordered table-sm">
+                        <thead>
+                          <tr>
+                            {tableRows.map((rows, index) => {
+                              return <th key={index}>{rows}</th>
+                            })}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {values.map((value, index) => {
+                            return (
+                              <tr key={index}>
+                                {value.map((val, i) => {
+                                  return <td key={i}>{val}</td>
+                                })}
+                              </tr>
+                            )
                           })}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {values.map((value, index) => {
-                          return (
-                            <tr key={index}>
-                              {value.map((val, i) => {
-                                return <td key={i}>{val}</td>
-                              })}
-                            </tr>
-                          )
-                        })}
-                      </tbody>
-                    </table>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
+                  {/* Save & Clear buttons */}
                   <div
-                    className="row my-3"
+                    className="col-12 col-lg-11 my-4"
                     id="save-clear-btns"
                     style={{ display: "none" }}
                   >
-                    <div className="col-4 offset-8 d-flex justify-content-end ps-5">
+                    <div className="col-4 offset-8 d-flex justify-content-end">
                       <button
                         className="btn btn-success"
                         onClick={e => saveTableDataToDatabase(e)}

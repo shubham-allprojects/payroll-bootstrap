@@ -697,10 +697,9 @@ td {
   /* flex: 8 0 auto;
   width: 365; */
 }
-.container-fluid{
+.container-fluid {
   padding-left: 0 !important;
 }
-
 /* .btn-primary {
   --bs-btn-color: #fff;
   text-align: center !important;
@@ -1076,6 +1075,10 @@ H .box {
 }
 
 @media screen and (max-width: 992px) {
+  .container-fluid {
+    padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+  }
+
   .home-carousel-wrapper .first-slide-carousel-caption {
     bottom: 25% !important;
   }
