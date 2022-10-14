@@ -176,9 +176,9 @@ label {
   padding: 5px 80px 5px 80px;
 }
 
-.marketingHead {
+/* .marketingHead {
   margin-top: 30px;
-}
+} */
 
 .ecommH1 {
   margin: 30px 0px 0px 50px;
@@ -204,7 +204,7 @@ label {
   font-size: 22px;
 }
 
-.projectDiv {
+/* .projectDiv {
   margin: 50px 0px 0px 0px;
 }
 
@@ -220,7 +220,7 @@ label {
 
 .ProjectCls a {
   margin: 20px;
-}
+} */
 
 .emailText {
   margin: 0px 50px 0px 0px;
@@ -256,9 +256,9 @@ label {
   text-align: -webkit-center;
 }
 
-.marketingimg {
+/* .marketingimg {
   width: 40%;
-}
+} */
 
 .usernameCls ::placeholder {
   font-size: 17px;
@@ -716,12 +716,12 @@ td {
   display: flex;
 }
 
-.list-unstyled {
+/* .list-unstyled {
   padding-left: 0;
   list-style: none;
   font-size: 20px !important;
   font-weight: bold !important;
-}
+} */
 
 .form-label {
   margin-bottom: 0.5rem;

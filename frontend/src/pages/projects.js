@@ -28,6 +28,7 @@ export default function projects() {
           className="projects-wrapper wrapper wrapper-padding"
         >
           <div className="container">
+            <h1 className="text-center">Projects</h1>
             <div className="row">
               <div className="col-12">
                 <div>
