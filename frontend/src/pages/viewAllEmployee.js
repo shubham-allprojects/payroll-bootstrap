@@ -6,7 +6,7 @@ import { useState } from "react"
 import { allUserData } from "../services/apiFunction"
 import Table from "react-bootstrap/Table"
 import Modal from "react-modal"
-import SideBar from "../components/SideBar"
+// import SideBar from "../components/SideBar"
 
 function App() {
   // modal
@@ -303,7 +303,40 @@ function App() {
         <div className="container-fluid wrapper">
           <div className="row">
             <div className="col-lg-4">
-              <SideBar />
+              {/* <SideBar /> */}
+              <div
+                id="sidebar"
+                className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
+              >
+                <div id="sidebar-wrapper" className="min-vh-100">
+                  <ul className="list-unstyled components">
+                    <li className="navbar-item">
+                      <Link to="/addEmployee" className="nav-link">
+                        {" "}
+                        My Profile
+                      </Link>
+                    </li>
+
+                    <li className="navbar-item">
+                      <Link to="/app/superadmin" className="nav-link">
+                        {" "}
+                        Add New Employee
+                      </Link>
+                    </li>
+
+                    <li className="navbar-item tab">
+                      <Link to="/viewAllEmployee" className="nav-link">
+                        View All Employees
+                      </Link>
+                    </li>
+                    <li className="navbar-item">
+                      <Link to="/addBulkEmployee" className="nav-link">
+                        Upload Bulk Employee
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             <div className="col-lg-8 col-md-12 wrapper-padding">

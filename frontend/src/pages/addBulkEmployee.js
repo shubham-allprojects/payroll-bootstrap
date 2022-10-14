@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import Papa from "papaparse"
 import { createManyUser } from "../services/apiFunction"
-import SideBar from "../components/SideBar"
+// import SideBar from "../components/SideBar"
 
 function AddBulkEmployee() {
   // State to store parsed data
@@ -130,7 +130,7 @@ function AddBulkEmployee() {
           <div className="row">
             {/* Sidebar*/}
             <div className="col-lg-4">
-              {/* <div
+              <div
                 id="sidebar"
                 className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
               >
@@ -162,8 +162,8 @@ function AddBulkEmployee() {
                     </li>
                   </ul>
                 </div>
-              </div> */}
-              <SideBar />
+              </div>
+              {/* <SideBar /> */}
             </div>
             <div className="col-lg-8">
               <div className="container wrapper-padding wrapper">
