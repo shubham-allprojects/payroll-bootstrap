@@ -40,28 +40,33 @@ span {
 }
 /*LOGIN*/
 
-.loginForm {
+/* .loginForm {
   margin: 10rem auto;
   width: 615px;
   height: auto;
   background: aliceblue;
   border-radius: 5px;
   box-shadow: 10px 10px #0000001f;
+} */
+
+.login-wrapper .card {
+  background: aliceblue;
+  box-shadow: 10px 10px #0000001f;
 }
 
-.loginlabel {
+/* .loginlabel {
   padding: 20px 105px;
   font-size: 35px;
   font-weight: bold;
   color: #130f40;
-}
+} */
 
-.loginForm h1 {
+/* .loginForm h1 {
   margin-bottom: 25px;
   font-size: 40px;
-}
+} */
 
-.login_form {
+/* .login_form {
   padding: 20px 120px;
 }
 
@@ -70,22 +75,22 @@ span {
   color: black;
   font-weight: 600;
   margin: 5px 0;
-}
+} */
 
-.login_form .loginInput {
+/* .login_form .loginInput {
   height: 40px;
   width: 350px;
   padding: 0 5px;
   font-size: 18px;
   outline: none;
   border: 1px solid silver;
-}
+} */
 
-.login_form .font2 {
+/* .login_form .font2 {
   margin-top: 30px;
-}
+} */
 
-.login_form button {
+/* .login_form button {
   margin: 45px 0 30px 0;
   height: 45px;
   width: 365px;
@@ -98,11 +103,11 @@ span {
   border-radius: 3px;
   border: 1px solid #3949ab;
   transition: 0.5s;
-}
+} */
 
-.login_form button:hover {
+/* .login_form button:hover {
   background: #151c6a;
-}
+} */
 
 .emailText p {
   font-size: 21px;
@@ -414,9 +419,9 @@ label {
   margin: 0px 0px 0px 13px;
 }
 
-.btn {
+/* .btn {
   margin: 0px 0px 0px 13px;
-}
+} */
 
 textarea::placeholder {
   font-size: 10px;

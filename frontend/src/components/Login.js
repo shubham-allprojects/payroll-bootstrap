@@ -68,14 +68,12 @@ const Login = () => {
   }, [user])
   return (
     <>
-      <div className="default-container">
+      {/* <div className="default-container">
         <div className="loginForm">
-          <h1 class="loginlabel">User Login</h1>
-
+          <h1 className="loginlabel">User Login</h1>
           <hr />
-
-          <form class="login_form" method="post" onSubmit={handleSubmit}>
-            <div class="font">Employee Id</div>
+          <form className="login_form" method="post" onSubmit={handleSubmit}>
+            <div className="font">Employee Id</div>
             <input
               type="text"
               name="username"
@@ -84,7 +82,7 @@ const Login = () => {
               value={userData.username}
               onChange={handleUpdate}
             />
-            <div class="font font2">Password</div>
+            <div className="font font2">Password</div>
             <input
               type="password"
               name="password"
@@ -101,11 +99,92 @@ const Login = () => {
               className="showPass"
             />{" "}
             Show Password
-            
             <button type="submit">Login</button>
           </form>
         </div>
-      </div>
+      </div> */}
+      <section
+        id="login-form"
+        className="login-wrapper wrapper wrapper-padding"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-6 col-md-9">
+              <form className="card" onSubmit={handleSubmit}>
+                <h1 className="fw-bold py-3 text-center">User Login</h1>
+                <hr />
+
+                <div className="row justify-content-center">
+                  <div className="col-md-7 col-10">
+                    <div className="row">
+                      <div className="col-12">
+                        <div className="form-group my-4">
+                          <label
+                            className="fw-bold fs-5"
+                            for="exampleInputUserID"
+                          >
+                            Employee Id
+                          </label>
+                          <input
+                            id="exampleInputUserID"
+                            type="text"
+                            name="username"
+                            placeholder="Enter Username"
+                            className="form-control mt-2"
+                            value={userData.username}
+                            onChange={handleUpdate}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="form-group mb-4">
+                          <label
+                            className="fw-bold fs-5"
+                            for="employeePassword"
+                          >
+                            Password
+                          </label>
+                          <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter Password"
+                            className="form-control mt-2"
+                            value={userData.password}
+                            onChange={handleUpdate}
+                            id="employeePassword"
+                          />
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="form-group form-check mb-4">
+                          <input
+                            onChange={showPasswordFunction}
+                            type="checkbox"
+                            className="form-check-input"
+                            id="exampleCheck1"
+                          />
+                          <label
+                            className="form-check-label"
+                            for="exampleCheck1"
+                          >
+                            Show Password
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="submit"
+                      className="btn btn-primary w-100 py-2 fw-bold fs-5 mb-5"
+                    >
+                      Login
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
