@@ -283,8 +283,6 @@ label {
   margin: 50px;
 }
 
-
-
 .formButtonDiv {
   text-align: center;
 }
@@ -669,8 +667,9 @@ td {
 }
 
 .superadmin-profile-wrapper .superadmin-links .card {
-  height: 215px;
+  height: 240px;
 }
+
 .superadmin-profile-wrapper .card {
   background-color: #f7eeee;
   box-shadow: 10px 10px #bbb9eb;
@@ -1097,6 +1096,10 @@ H .box {
 
   .empTable {
     overflow-x: scroll !important;
+  }
+
+  .superadmin-profile-wrapper .superadmin-links .card {
+    height: 220px;
   }
 }
 

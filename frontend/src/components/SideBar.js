@@ -1,7 +1,15 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 
 const SideBar = () => {
+  useEffect(() => {
+    let attr = document.querySelectorAll(".navbar-item a")
+    attr.forEach(item => {
+      if (item.getAttribute("aria-current") === "page") {
+        item.closest(".navbar-item").classList.add("tab")
+      }
+    })
+  }, [])
   return (
     <div
       id="sidebar"
@@ -28,7 +36,7 @@ const SideBar = () => {
               View All Employees
             </Link>
           </li>
-          <li className="navbar-item tab">
+          <li className="navbar-item">
             <Link to="/addBulkEmployee" className="nav-link">
               Upload Bulk Employee
             </Link>
