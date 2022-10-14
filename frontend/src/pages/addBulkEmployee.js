@@ -162,7 +162,7 @@ function AddBulkEmployee() {
           <div className="container">
             {/* File Uploader */}
             <div className="row justify-content-center mt-4">
-              <div className="col-6">
+              <div className="col-lg-6 col-md-8">
                 <div className="card shadow-lg p-4">
                   <h2>Upload Bulk Employee Information</h2>
 
