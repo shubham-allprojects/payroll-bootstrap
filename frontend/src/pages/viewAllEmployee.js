@@ -6,6 +6,7 @@ import { useState } from "react"
 import { allUserData } from "../services/apiFunction"
 import Table from "react-bootstrap/Table"
 import Modal from "react-modal"
+import SideBar from "../components/SideBar"
 
 function App() {
   // modal
@@ -294,165 +295,140 @@ function App() {
 
   useEffect(() => {
     getAllEmployees()
-    document.querySelectorAll("td,th").forEach(data => {
-      data.classList.add("text-center")
-    })
   }, [])
 
   return (
-    <div className="app">
+    <>
       <Layout>
-        <div className="allEmpDiv">
-          <div
-            id="sidebar"
-            className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
-          >
-            <div id="sidebar-wrapper" className="min-vh-100">
-              <ul className="list-unstyled components">
-                <li className="navbar-item ">
-                  <Link to="/addEmployee" className="nav-link">
-                    {" "}
-                    My Profile
-                  </Link>
-                </li>
-                <li className="navbar-item">
-                  <Link to="/app/superadmin" className="nav-link">
-                    {" "}
-                    Add New Employee
-                  </Link>
-                </li>
+        <div className="container-fluid wrapper">
+          <div className="row">
+            <div className="col-lg-4">
+              <SideBar />
+            </div>
 
-                <li className="navbar-item tab">
-                  <Link to="/viewAllEmployee" className="nav-link">
-                    View All Employees
-                  </Link>
-                </li>
-                <li className="navbar-item">
-                  <Link to="/addBulkEmployee" className="nav-link">
-                    Upload Bulk Employee
-                  </Link>
-                </li>
-              </ul>
+            <div className="col-lg-8 col-md-12 wrapper-padding">
+              <h2 className="text-center mb-4">View All Employee Details</h2>
+              <div className="empTable">
+                <table className="table text-center table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>Sr. No.</th>
+                      <th>Name of Employee</th>
+                      <th>Employee Id</th>
+                      <th>Basic Information</th>
+                      <th>Employee Position </th>
+                      <th>Family Information </th>
+                      <th> PAN and Pf UAN </th>
+                      <th>Payment Details </th>
+                      <th>Download PDF </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {records.map((record, Index) => {
+                      return (
+                        <tr key={Index}>
+                          <td>{Index + 1}</td>
+                          <td>{record.name}</td>
+                          <td>{record.empId}</td>
+                          <td>
+                            <button
+                              id="modalbtn"
+                              onClick={() =>
+                                onButtonClick(
+                                  record.email,
+                                  record.dob,
+                                  record.contactNo,
+                                  record.gender,
+                                  record.joiningDate,
+                                  record.probationPeriod,
+                                  record.confirmationDate
+                                )
+                              }
+                            >
+                              See Information{" "}
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="modalbtn"
+                              onClick={() =>
+                                onButtonClick1(
+                                  record.department,
+                                  record.designation,
+                                  record.location,
+                                  record.role,
+                                  record.workMode
+                                )
+                              }
+                            >
+                              {" "}
+                              See Information{" "}
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="modalbtn"
+                              onClick={() =>
+                                onButtonClick2(
+                                  record.numberOfMember,
+                                  record.status,
+                                  record.NameofSpouse,
+                                  record.relationship,
+                                  record.DOB,
+                                  record.child1,
+                                  record.child1Gender,
+                                  record.DOB1,
+                                  record.child2,
+                                  record.child2Gender,
+                                  record.DOB2,
+                                  record.NameofFather,
+                                  record.DOB3,
+                                  record.NameofMother,
+                                  record.DOB4
+                                )
+                              }
+                            >
+                              See Information{" "}
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="modalbtn"
+                              onClick={() =>
+                                onButtonClick3(record.pan, record.pf)
+                              }
+                            >
+                              See Information{" "}
+                            </button>
+                          </td>
+                          <td>
+                            <button
+                              id="modalbtn"
+                              onClick={() =>
+                                onButtonClick4(
+                                  record.paymentType,
+                                  record.bankName,
+                                  record.bankBranch,
+                                  record.ifscCode,
+                                  record.accountNumber
+                                )
+                              }
+                            >
+                              See Information{" "}
+                            </button>
+                          </td>
+                          <td>
+                            <button id="modalbtn">Download PDF </button>
+                          </td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
-          <div className="empTable">
-            <h2 className="text-center mb-4">View All Employee Details</h2>
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th className="heading">Sr. No.</th>
-                  <th className="heading">Name of Employee</th>
-                  <th className="heading">Employee Id</th>
-                  <th className="heading">Basic Information</th>
-                  <th className="heading">Employee Position </th>
-                  <th className="heading">Family Information </th>
-                  <th className="heading"> PAN and Pf UAN </th>
-                  <th className="heading">Payment Details </th>
-                  <th className="heading">Download PDF </th>
-                </tr>
-              </thead>
-              <tbody>
-                {records.map((record, Index) => {
-                  return (
-                    <tr key={Index}>
-                      <td>{Index + 1}</td>
-                      <td>{record.name}</td>
-                      <td>{record.empId}</td>
-                      <td>
-                        <button
-                          id="modalbtn"
-                          onClick={() =>
-                            onButtonClick(
-                              record.email,
-                              record.dob,
-                              record.contactNo,
-                              record.gender,
-                              record.joiningDate,
-                              record.probationPeriod,
-                              record.confirmationDate
-                            )
-                          }
-                        >
-                          See Information{" "}
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          id="modalbtn"
-                          onClick={() =>
-                            onButtonClick1(
-                              record.department,
-                              record.designation,
-                              record.location,
-                              record.role,
-                              record.workMode
-                            )
-                          }
-                        >
-                          {" "}
-                          See Information{" "}
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          id="modalbtn"
-                          onClick={() =>
-                            onButtonClick2(
-                              record.numberOfMember,
-                              record.status,
-                              record.NameofSpouse,
-                              record.relationship,
-                              record.DOB,
-                              record.child1,
-                              record.child1Gender,
-                              record.DOB1,
-                              record.child2,
-                              record.child2Gender,
-                              record.DOB2,
-                              record.NameofFather,
-                              record.DOB3,
-                              record.NameofMother,
-                              record.DOB4
-                            )
-                          }
-                        >
-                          See Information{" "}
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          id="modalbtn"
-                          onClick={() => onButtonClick3(record.pan, record.pf)}
-                        >
-                          See Information{" "}
-                        </button>
-                      </td>
-                      <td>
-                        <button
-                          id="modalbtn"
-                          onClick={() =>
-                            onButtonClick4(
-                              record.paymentType,
-                              record.bankName,
-                              record.bankBranch,
-                              record.ifscCode,
-                              record.accountNumber
-                            )
-                          }
-                        >
-                          See Information{" "}
-                        </button>
-                      </td>
-                      <td>
-                        <button id="modalbtn">Download PDF </button>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
           {/* family information */}
           <Modal isOpen={modalIsOpen}>
             <h1 className="heading text-center pt-4" id="heading"></h1>
@@ -468,7 +444,7 @@ function App() {
           </Modal>
         </div>
       </Layout>
-    </div>
+    </>
   )
 }
 export default App

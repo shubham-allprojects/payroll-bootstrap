@@ -143,8 +143,10 @@ label {
   background-color: #d3e2ff;
 }
 
-.empTable table {
-  border: 1px solid black;
+.empTable .table,
+.empTable .table-bordered,
+.empTable .table-striped {
+  border-color: black !important;
 }
 
 .links a {
@@ -388,10 +390,6 @@ label {
   background-color: #d3e2ff;
 }
 
-.empTable thead {
-  background-color: #d3e2ff;
-}
-
 .Detail {
   font-size: 30px;
   text-align: center;
@@ -516,13 +514,13 @@ input .larger {
   margin: 100px 0px 0px 0px;
 }
 
-.empTable {
+/* .empTable {
   margin: 85px auto;
-}
+} */
 
-.empTable th {
+/* .empTable th {
   text-align: center;
-}
+} */
 
 .emp {
   margin: 200px 0px 0px 200px;
@@ -1093,6 +1091,10 @@ H .box {
 
   .dms-wrapper .img-div-dms {
     height: 270px;
+  }
+
+  .empTable {
+    overflow-x: scroll !important;
   }
 }
 
