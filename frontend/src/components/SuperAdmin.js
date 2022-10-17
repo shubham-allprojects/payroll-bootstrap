@@ -4,6 +4,7 @@ import "../style/global.css"
 import { Link, navigate } from "gatsby"
 import { createUser } from "../services/apiFunction"
 import "react-toastify/dist/ReactToastify.css"
+import SideBar from "./SideBar"
 
 // const regAlpha = /^[a-zA-Z]+$/
 const regAlphaSpace = /^[a-zA-Z ]*$/
@@ -62,7 +63,7 @@ const Superadmin = location => {
       children2.style = "display:none"
     }
   }
-  const [showFormNo, setShowFormNo] = useState(4)
+  const [showFormNo, setShowFormNo] = useState(3)
   const [sDate, setSDate] = useState("")
   const [employeeData1, setEmployeeData1] = useState({
     name: "",
@@ -734,8 +735,8 @@ const Superadmin = location => {
 
   return (
     <>
-      <div className="d-flex min-vh-100">
-        <div
+      {/* <div className="d-flex min-vh-100"> */}
+      {/* <div
           id="sidebar"
           className="d-none d-sm-none d-md-none d-lg-block d-xl-block d-xxl-block"
         >
@@ -768,925 +769,980 @@ const Superadmin = location => {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
-        <section className="sectionClass">
-          <div className="formMainContainer">
-            {showFormNo === 1 ? (
-              <div className="formContainer form-1">
-                <h3 className="Detail"> Basic Information of Employee</h3>
-                <hr></hr>
-                <form>
-                  <div className="mb-3">
-                    <div id="errorMsg"></div>
-                    <label htmlFor="exampleInputName1" className="form-label">
-                      Full Name
-                    </label>
-                    <input
-                      type="name"
-                      className="form-control"
-                      id="exampleInputName1"
-                      name="name"
-                      value={employeeData1.name}
-                      onChange={handleFirstFormInput}
-                    />
-                    <p></p>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">
-                      Email address
-                    </label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      name="email"
-                      value={employeeData1.email}
-                      aria-describedby="emailHelp"
-                      onChange={handleFirstFormInput}
-                      required
-                    />
-                    <p></p>
-                  </div>
-                  {}
-
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputdob" className="form-label">
-                      Date Of Birth
-                    </label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="exampleInputdob"
-                      name="dob"
-                      value={employeeData1.dob}
-                      onChange={handleFirstFormInput}
-                    />
-                    <p></p>
-                  </div>
-                  {}
-
-                  <div className="mb-3">
-                    <div className="contactNoDiv">
-                      <label
-                        htmlFor="exampleInputcontactNo"
-                        className="form-label"
-                      >
-                        Contact No
-                      </label>
-                    </div>
-
-                    <div className="countryClass">
-                      <select
-                        className="countryCode"
-                        name="countryCode"
-                        value={employeeData1.countryCode}
-                        onChange={handleFirstFormInput}
-                      >
-                        <option hidden value="">
-                          -Select-
-                        </option>
-                        <option value="+91 India">+91 India</option>
-                        <option value="+60 Malaysia">+60 Malaysia</option>
-                      </select>
-
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="exampleInputcontactNo"
-                        name="contactNo"
-                        value={employeeData1.contactNo}
-                        onChange={handleFirstFormInput}
-                      />
-                    </div>
-                    <p></p>
-                  </div>
-                  {}
-                  <div className="mb-3">
-                    <label htmlFor="gender" className="form-label">
-                      Gender
-                    </label>
-
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="gender"
-                      onChange={handleFirstFormInput}
-                    >
-                      <option selected disabled value="gender">
-                        Gender
-                      </option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputJoiningDate"
-                      className="form-label"
-                    >
-                      Joining Date
-                    </label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="exampleInputJoiningDate"
-                      name="joiningDate"
-                      value={employeeData1.joiningDate}
-                      onChange={handleFirstFormInput}
-                    />
-                    <p></p>
-                  </div>
-                  {}
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputprobationPeriod"
-                      className="form-label"
-                    >
-                      Probation Period
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="probationPeriod"
-                      onChange={handleFirstFormInput}
-                    >
-                      {" "}
-                      <option selected disabled value="gender">
-                        Probation Period{" "}
-                      </option>
-                      <option value="3">3 Months</option>
-                      <option value="6">6 Months</option>
-                      <option value="12">1 Year</option>
-                    </select>
-                    <p></p>
-                  </div>
-
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputconfirmationDate"
-                      className="form-label"
-                    >
-                      Confirmation date
-                    </label>
-
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="exampleInputconfirmationDate"
-                      name="confirmationDate"
-                      value={employeeData1.confirmationDate}
-                      onChange={handleFirstFormInput}
-                    />
-                    <p></p>
-                  </div>
-                  {}
-                  <div className="formButtonDiv">
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleFirstForm}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {showFormNo === 2 ? (
-              <div className="formContainer form-2">
-                <h3 className="Detail">Employee Position Details</h3>
-                <hr></hr>
-                <form>
-                  <div className="mb-3">
-                    <label htmlFor="Department" className="form-label">
-                      Department
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="department"
-                      value={employeeData2.department}
-                      onChange={handleSecondFormInput}
-                      // onChange={e => handleDepartment(e.target.value)}
-                    >
-                      <option value="0">Select Department</option>
-                      {department && department !== undefined
-                        ? department.map((ctr, index) => {
-                            return (
-                              <option key={index} value={ctr.id}>
-                                {ctr.name}
-                              </option>
-                            )
-                          })
-                        : "No Department"}
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="Designation" className="form-label">
-                      Designation
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="designation"
-                      onChange={handleSecondFormInput}
-                      //onChange={(e) => handleState(e.target.value)}
-                    >
-                      <option value="0">Select Designation</option>
-                      {designation && designation !== undefined
-                        ? designation.map((ctr, index) => {
-                            return (
-                              <option key={index} value={ctr.id}>
-                                {ctr.name}
-                              </option>
-                            )
-                          })
-                        : "No Designation"}
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="Location" className="form-label">
-                      Location
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="location"
-                      onChange={handleSecondFormInput}
-                    >
-                      <option selected disabled value="">
-                        Location
-                      </option>
-                      <option value="Pune, India">Pune, India</option>
-                      <option value="Kuala Lumpur,Malaysia">
-                        Kuala Lumpur,Malaysia
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="Role" className="form-label">
-                      Role
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="role"
-                      onChange={handleSecondFormInput}
-                    >
-                      <option selected disabled value="">
-                        {" "}
-                        Role
-                      </option>
-                      <option value="superAdmin">Super Admin</option>
-                      <option value="hrAdmin">Hr Admin</option>
-                      <option value="technicalEmployee">
-                        Technical Employee
-                      </option>
-                      <option value="accountEmployee">Account Employee</option>
-                      <option value="marketingEmployee">
-                        Marketing Employee
-                      </option>
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label htmlFor="Role" className="form-label">
-                      Work Mode
-                    </label>{" "}
-                    <br />
-                    <input
-                      type="radio"
-                      id="famInput1"
-                      name="workMode"
-                      value="work from home"
-                      onChange={handleSecondFormInput}
-                    />
-                    <label for="wfh">Work from Home</label>
-                    <input
-                      type="radio"
-                      id="famInput"
-                      name="workMode"
-                      value="work from Office"
-                      onChange={handleSecondFormInput}
-                    />
-                    <label for="wfo">Work from Office </label>
-                  </div>
-                  <br />
-                  <div className="formButtonDiv">
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => setShowFormNo(1)}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleSecondForm}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-            {showFormNo === 3 ? (
-              <div className="formContainer form-3">
-                <h3 className="Detail"> Family Information </h3>
-                <hr></hr>
-                <form>
-                  <div className="mb-3 famDiv">
-                    <label
-                      htmlFor="exampleInputnoOfMember"
-                      className="form-label"
-                    >
-                      Number of Members
-                    </label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="exampleInputnumberOfMember"
-                      name="numberOfMember"
-                      value={employeeData3.numberOfMember}
-                      onChange={handleThirdFormInput}
-                    />
-                  </div>
-                  <div className="mb-3 famDiv">
-                    <div className="famRadioBtn">
-                      <input
-                        type="radio"
-                        name="status"
-                        value="married"
-                        id="famInput"
-                        onClick={radioClick}
-                        onChange={handleThirdFormInput}
-                      />
-                      <label for="married">Married</label>
-                      <input
-                        type="radio"
-                        name="status"
-                        value="single"
-                        id="famInput1"
-                        onClick={radioClick1}
-                        onChange={handleThirdFormInput}
-                      />
-                      <label for="single">Single</label>
-                    </div>
-                  </div>
-                  <div id="spouse">
-                    <div className="familyInfo">
-                      <div className="mb-3 famDiv">
-                        <label
-                          htmlFor="exampleInputOccupation"
-                          className="form-label"
-                        >
-                          Name of Spouse
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="exampleInputNameofSpouse"
-                          name="NameofSpouse"
-                          value={employeeData3.NameofSpouse}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-
-                      <div className="mb-3 famDiv">
-                        <label
-                          htmlFor="exampleInputnumberOfPassword"
-                          className="form-label"
-                        >
-                          Relationship
-                        </label>
-                        <select
-                          className="relationClass"
-                          required
-                          value={employeeData3.relationship}
-                          name="relationship"
-                          onChange={handleThirdFormInput}
-                        >
-                          <option hidden value="">
-                            {" "}
-                            Relationship
-                          </option>
-                          <option value="Husband">Husband </option>
-                          <option value="Wife">Wife</option>
-                        </select>
-                      </div>
-
-                      <div className="mb-3 famDiv">
-                        <label htmlFor="exampleInputDOB" className="form-label">
-                          Date Of Birth
-                        </label>
-                        <input
-                          type="date"
-                          className="form-control"
-                          id="exampleInputDOB1"
-                          name="DOB"
-                          value={employeeData3.DOB}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-                    </div>
-
-                    <div className="mb-3 famDiv">
-                      <div className="childCheckBox">
-                        <input
-                          type="checkbox"
-                          id="famInput1"
-                          name="childCheck1"
-                          value="child1"
-                          ref={ref}
-                          onClick={child1Click}
-                        />
-                        <label for="child1">Child 1</label>
-
-                        <input
-                          type="checkbox"
-                          id="famInput"
-                          name="childCheck2"
-                          value="child2"
-                          ref={ref1}
-                          onClick={child2Click}
-                        />
-                        <label for="child2">Child 2</label>
-                        <br />
-                      </div>
-                    </div>
-                    <br />
-
-                    <div id="children">
-                      <div className="familyInfo child1" id="child1">
-                        <div className="mb-3 famDiv">
-                          <label
-                            htmlFor="exampleInput Child1"
-                            className="form-label"
-                          >
-                            Name of Child 1
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="exampleInputChild1"
-                            name="child1"
-                            value={employeeData3.child1}
-                            onChange={handleThirdFormInput}
-                          />
-                          <p></p>
-                        </div>
-
-                        <div className="mb-3 famDiv">
-                          <div className="famRadioBtn">
-                            <input
-                              type="radio"
-                              name="child1Gender"
-                              value="Male"
-                              id="famInput"
-                              onChange={handleThirdFormInput}
-                            />
-                            <label for="married">Male</label>
-                            <input
-                              type="radio"
-                              name="child1Gender"
-                              value="Female"
-                              id="famInput1"
-                              onChange={handleThirdFormInput}
-                            />
-                            <label for="single">Female</label>
-                          </div>
-                        </div>
-                        <div className="mb-3 famDiv">
-                          <label
-                            htmlFor="exampleInputDOB"
-                            className="form-label"
-                          >
-                            Date Of Birth
-                          </label>
-                          <input
-                            type="date"
-                            className="form-control"
-                            id="exampleInputDOB1"
-                            name="DOB1"
-                            value={employeeData3.DOB1}
-                            onChange={handleThirdFormInput}
-                          />
-                          <p></p>
-                        </div>
-                      </div>{" "}
-                      <br />
-                      <div className="familyInfo child2" id="child2">
-                        <div className="mb-3 famDiv">
-                          <label
-                            htmlFor="exampleInputChild2"
-                            className="form-label"
-                          >
-                            Name of Child 2
-                          </label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="exampleInputChild2"
-                            name="child2"
-                            value={employeeData3.child2}
-                            onChange={handleThirdFormInput}
-                          />
-                          <p></p>
-                        </div>
-                        <div className="mb-3 famDiv">
-                          <div className="famRadioBtn">
-                            <input
-                              type="radio"
-                              name="child2Gender"
-                              value="Male"
-                              id="famInput"
-                              onChange={handleThirdFormInput}
-                            />
-                            <label for="married">Male</label>
-                            <input
-                              type="radio"
-                              name="child2Gender"
-                              value="Female"
-                              id="famInput1"
-                              onChange={handleThirdFormInput}
-                            />
-                            <label for="single">Female</label>
-                          </div>
-                        </div>
-                        <div className="mb-3 famDiv">
-                          <label
-                            htmlFor="exampleInputDOB"
-                            className="form-label"
-                          >
-                            Date Of Birth
-                          </label>
-                          <input
-                            type="date"
-                            className="form-control"
-                            id="exampleInputDOB2"
-                            name="DOB2"
-                            value={employeeData3.DOB2}
-                            onChange={handleThirdFormInput}
-                          />
-                        </div>
-                      </div>{" "}
-                    </div>
-                  </div>
-                  <div id="newDiv">
-                    <div className="familyInfo" id="parent">
-                      <div className="mb-3 famDiv">
-                        <label
-                          htmlFor="exampleInputOccupation"
-                          className="form-label"
-                        >
-                          Name of Father
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="exampleInputNameofSpouse"
-                          name="NameofFather"
-                          value={employeeData3.NameofFather}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-
-                      <div className="mb-3 famDiv">
-                        <label htmlFor="exampleInputDOB" className="form-label">
-                          Date Of Birth
-                        </label>
-                        <input
-                          type="date"
-                          className="form-control"
-                          id="exampleInputDOB1"
-                          name="DOB3"
-                          value={employeeData3.DOB3}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-                    </div>{" "}
-                    <div className="familyInfo" id="parent">
-                      <div className="mb-3 famDiv">
-                        <label
-                          htmlFor="exampleInputOccupation"
-                          className="form-label"
-                        >
-                          Name of Mother
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="exampleInputNameofSpouse"
-                          name="NameofMother"
-                          value={employeeData3.NameofMother}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-
-                      <div className="mb-3 famDiv">
-                        <label htmlFor="exampleInputDOB" className="form-label">
-                          Date Of Birth
-                        </label>
-                        <input
-                          type="date"
-                          className="form-control"
-                          id="exampleInputDOB1"
-                          name="DOB4"
-                          value={employeeData3.DOB4}
-                          onChange={handleThirdFormInput}
-                        />
-                        <p></p>
-                      </div>
-                    </div>{" "}
-                  </div>
-                  <br />
-                  <div className="formButtonDiv">
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => setShowFormNo(2)}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleThirdForm}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-
-            {showFormNo === 4 ? (
-              <div className="formContainer form-4">
-                <h3 className="Detail"> PAN details</h3>
-                <hr></hr>
-                <form>
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputEmail1" className="form-label">
-                      PAN Number
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      name="pan"
-                      value={employeeData4.pan}
-                      onChange={handleFourthFormInput}
-                    />
-                    <div id="emailHelp" className="form-text">
-                      Hint: HQTPD0461E
-                    </div>
-                    <p></p>
-                  </div>
-                  <div id="panError"></div>
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputPassword1"
-                      className="form-label"
-                    >
-                      PF UAN Number
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputPassword1"
-                      name="pf"
-                      value={employeeData4.pf}
-                      onChange={handleFourthFormInput}
-                    />
-                    <div id="emailHelp" className="form-text">
-                      Hint: It is 12 digit number.
-                    </div>
-                    <p></p>
-                  </div>
-                  <div id="pfError"></div>
-                  <div className="formButtonDiv">
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => setShowFormNo(3)}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleFourthForm}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-            {showFormNo === 5 ? (
-              <div className="formContainer form-4">
-                <h3 className="Detail">Create employee account</h3>
-                <hr></hr>
-                <div id="showErrorMsg"></div>
-                <form>
-                  {}
-                  <div className="mb-3">
-                    <div id="errorMsg"></div>
-                    <label htmlFor="exampleInputempID" className="form-label">
-                      Employee ID
-                    </label>
-                    <input
-                      type="empId"
-                      className="form-control"
-                      id="exampleInputempID"
-                      name="empId"
-                      value={employeeData5.empId}
-                      onChange={handleFifthFormInput}
-                    />
-                    <div id="emailHelp" className="form-text">
-                      Hint : UISPL0016
-                    </div>
-                    <p></p>
-                  </div>
-                  <div className="mb-3">
-                    <label htmlFor="exampleInputempID" className="form-label">
-                      Password
-                    </label>
-                    <div className="box">
-                      <input
-                        type="password"
-                        className="form-control"
-                        name="tempPassword"
-                        value={employeeData5.tempPassword}
-                        onChange={handleFifthFormInput}
-                        id="employeePassword"
-                      />
-                      <div id="emailHelp" className="form-text">
-                        Hint : Password must be same as Emplooyee Id
-                      </div>
-                    </div>
-                  </div>
-                  <input
-                    type="checkbox"
-                    onChange={showPasswordFunction}
-                    className="showPass"
-                  />{" "}
-                  Show Password
-                  <br /> <br />
-                  <div className="formButtonDiv">
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => setShowFormNo(4)}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleFifthForm}
-                    >
-                      Next
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
-            {showFormNo === 6 ? (
-              <div className="formContainer form-3">
-                <h3 className="Detail"> Payment details</h3>
-                <hr></hr>
-                <form>
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputpaymenttype"
-                      className="form-label"
-                    >
-                      Payment Type
-                    </label>
-                    <select
-                      className="form-select mt-3"
-                      required
-                      name="paymentType"
-                      onChange={handleSixthFormInput}
-                    >
-                      <option selected disabled value="">
-                        Payment Type
-                      </option>
-                      <option value="NEFT transfer">NEFT transfer</option>
-                    </select>
-                  </div>
-
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputbankName"
-                      className="form-label"
-                    >
-                      Bank Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputaccNumber1"
-                      name="bankName"
-                      onChange={handleSixthFormInput}
-                    />
-                  </div>
-
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputbranchName"
-                      className="form-label"
-                    >
-                      Branch Name
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputbranchName"
-                      name="bankBranch"
-                      onChange={handleSixthFormInput}
-                    />
-                  </div>
-
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputifscCode"
-                      className="form-label"
-                    >
-                      IFSC Code
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputifscCode"
-                      name="ifscCode"
-                      onChange={handleSixthFormInput}
-                    />
-                    <p></p>
-                  </div>
-                  {/* <div id="ifscError"></div> */}
-                  <div className="mb-3">
-                    <label
-                      htmlFor="exampleInputaccNumber1"
-                      className="form-label"
-                    >
-                      Account Number
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="exampleInputaccNumber1"
-                      name="accountNumber"
-                      onChange={handleSixthFormInput}
-                    />
-                    <p></p>
-                  </div>
-                  <div className="formButtonDiv">
-                    {" "}
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => setShowFormNo(5)}
-                    >
-                      Previous
-                    </button>
-                    <button
-                      type="submit"
-                      className="btn btn-primary"
-                      onClick={handleSixthForm}
-                    >
-                      Finish
-                    </button>
-                  </div>
-                </form>
-              </div>
-            ) : (
-              ""
-            )}
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-lg-4">
+            <SideBar />
           </div>
-        </section>
+          <div className="col-lg-8">
+            <section className="wrapper-padding wrapper">
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-lg-9 col-md-11">
+                    {showFormNo === 1 ? (
+                      <div className="formContainer form-1">
+                        <h3 className="Detail">
+                          {" "}
+                          Basic Information of Employee
+                        </h3>
+                        <hr></hr>
+                        <form>
+                          <div className="mb-3">
+                            <div id="errorMsg"></div>
+                            <label
+                              htmlFor="exampleInputName1"
+                              className="form-label"
+                            >
+                              Full Name
+                            </label>
+                            <input
+                              type="name"
+                              className="form-control"
+                              id="exampleInputName1"
+                              name="name"
+                              value={employeeData1.name}
+                              onChange={handleFirstFormInput}
+                            />
+                            <p></p>
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputEmail1"
+                              className="form-label"
+                            >
+                              Email address
+                            </label>
+                            <input
+                              type="email"
+                              className="form-control"
+                              id="exampleInputEmail1"
+                              name="email"
+                              value={employeeData1.email}
+                              aria-describedby="emailHelp"
+                              onChange={handleFirstFormInput}
+                              required
+                            />
+                            <p></p>
+                          </div>
+                          {}
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputdob"
+                              className="form-label"
+                            >
+                              Date Of Birth
+                            </label>
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="exampleInputdob"
+                              name="dob"
+                              value={employeeData1.dob}
+                              onChange={handleFirstFormInput}
+                            />
+                            <p></p>
+                          </div>
+                          {}
+
+                          <div className="mb-3">
+                            <div className="contactNoDiv">
+                              <label
+                                htmlFor="exampleInputcontactNo"
+                                className="form-label"
+                              >
+                                Contact No
+                              </label>
+                            </div>
+
+                            <div className="countryClass">
+                              <select
+                                className="countryCode"
+                                name="countryCode"
+                                value={employeeData1.countryCode}
+                                onChange={handleFirstFormInput}
+                              >
+                                <option hidden value="">
+                                  -Select-
+                                </option>
+                                <option value="+91 India">+91 India</option>
+                                <option value="+60 Malaysia">
+                                  +60 Malaysia
+                                </option>
+                              </select>
+
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="exampleInputcontactNo"
+                                name="contactNo"
+                                value={employeeData1.contactNo}
+                                onChange={handleFirstFormInput}
+                              />
+                            </div>
+                            <p></p>
+                          </div>
+                          {}
+                          <div className="mb-3">
+                            <label htmlFor="gender" className="form-label">
+                              Gender
+                            </label>
+
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="gender"
+                              onChange={handleFirstFormInput}
+                            >
+                              <option selected disabled value="gender">
+                                Gender
+                              </option>
+                              <option value="Male">Male</option>
+                              <option value="Female">Female</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputJoiningDate"
+                              className="form-label"
+                            >
+                              Joining Date
+                            </label>
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="exampleInputJoiningDate"
+                              name="joiningDate"
+                              value={employeeData1.joiningDate}
+                              onChange={handleFirstFormInput}
+                            />
+                            <p></p>
+                          </div>
+                          {}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputprobationPeriod"
+                              className="form-label"
+                            >
+                              Probation Period
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="probationPeriod"
+                              onChange={handleFirstFormInput}
+                            >
+                              {" "}
+                              <option selected disabled value="gender">
+                                Probation Period{" "}
+                              </option>
+                              <option value="3">3 Months</option>
+                              <option value="6">6 Months</option>
+                              <option value="12">1 Year</option>
+                            </select>
+                            <p></p>
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputconfirmationDate"
+                              className="form-label"
+                            >
+                              Confirmation date
+                            </label>
+
+                            <input
+                              type="date"
+                              className="form-control"
+                              id="exampleInputconfirmationDate"
+                              name="confirmationDate"
+                              value={employeeData1.confirmationDate}
+                              onChange={handleFirstFormInput}
+                            />
+                            <p></p>
+                          </div>
+                          {}
+                          <div className="formButtonDiv">
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleFirstForm}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+
+                    {showFormNo === 2 ? (
+                      <div className="formContainer form-2">
+                        <h3 className="Detail">Employee Position Details</h3>
+                        <hr></hr>
+                        <form>
+                          <div className="mb-3">
+                            <label htmlFor="Department" className="form-label">
+                              Department
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="department"
+                              value={employeeData2.department}
+                              onChange={handleSecondFormInput}
+                              // onChange={e => handleDepartment(e.target.value)}
+                            >
+                              <option value="0">Select Department</option>
+                              {department && department !== undefined
+                                ? department.map((ctr, index) => {
+                                    return (
+                                      <option key={index} value={ctr.id}>
+                                        {ctr.name}
+                                      </option>
+                                    )
+                                  })
+                                : "No Department"}
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="Designation" className="form-label">
+                              Designation
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="designation"
+                              onChange={handleSecondFormInput}
+                              //onChange={(e) => handleState(e.target.value)}
+                            >
+                              <option value="0">Select Designation</option>
+                              {designation && designation !== undefined
+                                ? designation.map((ctr, index) => {
+                                    return (
+                                      <option key={index} value={ctr.id}>
+                                        {ctr.name}
+                                      </option>
+                                    )
+                                  })
+                                : "No Designation"}
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="Location" className="form-label">
+                              Location
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="location"
+                              onChange={handleSecondFormInput}
+                            >
+                              <option selected disabled value="">
+                                Location
+                              </option>
+                              <option value="Pune, India">Pune, India</option>
+                              <option value="Kuala Lumpur,Malaysia">
+                                Kuala Lumpur,Malaysia
+                              </option>
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                            <label htmlFor="Role" className="form-label">
+                              Role
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="role"
+                              onChange={handleSecondFormInput}
+                            >
+                              <option selected disabled value="">
+                                {" "}
+                                Role
+                              </option>
+                              <option value="superAdmin">Super Admin</option>
+                              <option value="hrAdmin">Hr Admin</option>
+                              <option value="technicalEmployee">
+                                Technical Employee
+                              </option>
+                              <option value="accountEmployee">
+                                Account Employee
+                              </option>
+                              <option value="marketingEmployee">
+                                Marketing Employee
+                              </option>
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                          
+                            <div className="row justify-content-start">
+                            <label htmlFor="Role" className="form-label mb-3">
+                              Work Mode
+                            </label>
+                              <div className="col-lg-5 col-md-6">
+                                <input
+                                  type="radio"
+                                  id="famInput1"
+                                  name="workMode"
+                                  value="work from home"
+                                  onChange={handleSecondFormInput}
+                                />
+                                <label for="wfh">Work from Home</label>
+                              </div>
+                              <div className="col-lg-5 col-md-6">
+                                <input
+                                  type="radio"
+                                  id="famInput"
+                                  name="workMode"
+                                  value="work from Office"
+                                  onChange={handleSecondFormInput}
+                                />
+                                <label for="wfo">Work from Office </label>
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+                          <div className="formButtonDiv">
+                            <button
+                              className="btn btn-primary"
+                              onClick={() => setShowFormNo(1)}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleSecondForm}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    {showFormNo === 3 ? (
+                      <div className="formContainer form-3">
+                        <h3 className="Detail"> Family Information </h3>
+                        <hr></hr>
+                        <form>
+                          <div className="mb-3 famDiv">
+                            <label
+                              htmlFor="exampleInputnoOfMember"
+                              className="form-label"
+                            >
+                              Number of Members
+                            </label>
+                            <input
+                              type="number"
+                              className="form-control"
+                              id="exampleInputnumberOfMember"
+                              name="numberOfMember"
+                              value={employeeData3.numberOfMember}
+                              onChange={handleThirdFormInput}
+                            />
+                          </div>
+                          <div className="mb-3 famDiv">
+                            <div className="famRadioBtn">
+                              <input
+                                type="radio"
+                                name="status"
+                                value="married"
+                                id="famInput"
+                                onClick={radioClick}
+                                onChange={handleThirdFormInput}
+                              />
+                              <label for="married">Married</label>
+                              <input
+                                type="radio"
+                                name="status"
+                                value="single"
+                                id="famInput1"
+                                onClick={radioClick1}
+                                onChange={handleThirdFormInput}
+                              />
+                              <label for="single">Single</label>
+                            </div>
+                          </div>
+                          <div id="spouse">
+                            <div className="familyInfo">
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputOccupation"
+                                  className="form-label"
+                                >
+                                  Name of Spouse
+                                </label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="exampleInputNameofSpouse"
+                                  name="NameofSpouse"
+                                  value={employeeData3.NameofSpouse}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputnumberOfPassword"
+                                  className="form-label"
+                                >
+                                  Relationship
+                                </label>
+                                <select
+                                  className="relationClass"
+                                  required
+                                  value={employeeData3.relationship}
+                                  name="relationship"
+                                  onChange={handleThirdFormInput}
+                                >
+                                  <option hidden value="">
+                                    {" "}
+                                    Relationship
+                                  </option>
+                                  <option value="Husband">Husband </option>
+                                  <option value="Wife">Wife</option>
+                                </select>
+                              </div>
+
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputDOB"
+                                  className="form-label"
+                                >
+                                  Date Of Birth
+                                </label>
+                                <input
+                                  type="date"
+                                  className="form-control"
+                                  id="exampleInputDOB1"
+                                  name="DOB"
+                                  value={employeeData3.DOB}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+                            </div>
+
+                            <div className="mb-3 famDiv">
+                              <div className="childCheckBox">
+                                <input
+                                  type="checkbox"
+                                  id="famInput1"
+                                  name="childCheck1"
+                                  value="child1"
+                                  ref={ref}
+                                  onClick={child1Click}
+                                />
+                                <label for="child1">Child 1</label>
+
+                                <input
+                                  type="checkbox"
+                                  id="famInput"
+                                  name="childCheck2"
+                                  value="child2"
+                                  ref={ref1}
+                                  onClick={child2Click}
+                                />
+                                <label for="child2">Child 2</label>
+                                <br />
+                              </div>
+                            </div>
+                            <br />
+
+                            <div id="children">
+                              <div className="familyInfo child1" id="child1">
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInput Child1"
+                                    className="form-label"
+                                  >
+                                    Name of Child 1
+                                  </label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputChild1"
+                                    name="child1"
+                                    value={employeeData3.child1}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                  <p></p>
+                                </div>
+
+                                <div className="mb-3 famDiv">
+                                  <div className="famRadioBtn">
+                                    <input
+                                      type="radio"
+                                      name="child1Gender"
+                                      value="Male"
+                                      id="famInput"
+                                      onChange={handleThirdFormInput}
+                                    />
+                                    <label for="married">Male</label>
+                                    <input
+                                      type="radio"
+                                      name="child1Gender"
+                                      value="Female"
+                                      id="famInput1"
+                                      onChange={handleThirdFormInput}
+                                    />
+                                    <label for="single">Female</label>
+                                  </div>
+                                </div>
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputDOB"
+                                    className="form-label"
+                                  >
+                                    Date Of Birth
+                                  </label>
+                                  <input
+                                    type="date"
+                                    className="form-control"
+                                    id="exampleInputDOB1"
+                                    name="DOB1"
+                                    value={employeeData3.DOB1}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                  <p></p>
+                                </div>
+                              </div>{" "}
+                              <br />
+                              <div className="familyInfo child2" id="child2">
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputChild2"
+                                    className="form-label"
+                                  >
+                                    Name of Child 2
+                                  </label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputChild2"
+                                    name="child2"
+                                    value={employeeData3.child2}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                  <p></p>
+                                </div>
+                                <div className="mb-3 famDiv">
+                                  <div className="famRadioBtn">
+                                    <input
+                                      type="radio"
+                                      name="child2Gender"
+                                      value="Male"
+                                      id="famInput"
+                                      onChange={handleThirdFormInput}
+                                    />
+                                    <label for="married">Male</label>
+                                    <input
+                                      type="radio"
+                                      name="child2Gender"
+                                      value="Female"
+                                      id="famInput1"
+                                      onChange={handleThirdFormInput}
+                                    />
+                                    <label for="single">Female</label>
+                                  </div>
+                                </div>
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputDOB"
+                                    className="form-label"
+                                  >
+                                    Date Of Birth
+                                  </label>
+                                  <input
+                                    type="date"
+                                    className="form-control"
+                                    id="exampleInputDOB2"
+                                    name="DOB2"
+                                    value={employeeData3.DOB2}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                </div>
+                              </div>{" "}
+                            </div>
+                          </div>
+                          <div id="newDiv">
+                            <div className="familyInfo" id="parent">
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputOccupation"
+                                  className="form-label"
+                                >
+                                  Name of Father
+                                </label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="exampleInputNameofSpouse"
+                                  name="NameofFather"
+                                  value={employeeData3.NameofFather}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputDOB"
+                                  className="form-label"
+                                >
+                                  Date Of Birth
+                                </label>
+                                <input
+                                  type="date"
+                                  className="form-control"
+                                  id="exampleInputDOB1"
+                                  name="DOB3"
+                                  value={employeeData3.DOB3}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+                            </div>{" "}
+                            <div className="familyInfo" id="parent">
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputOccupation"
+                                  className="form-label"
+                                >
+                                  Name of Mother
+                                </label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  id="exampleInputNameofSpouse"
+                                  name="NameofMother"
+                                  value={employeeData3.NameofMother}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+
+                              <div className="mb-3 famDiv">
+                                <label
+                                  htmlFor="exampleInputDOB"
+                                  className="form-label"
+                                >
+                                  Date Of Birth
+                                </label>
+                                <input
+                                  type="date"
+                                  className="form-control"
+                                  id="exampleInputDOB1"
+                                  name="DOB4"
+                                  value={employeeData3.DOB4}
+                                  onChange={handleThirdFormInput}
+                                />
+                                <p></p>
+                              </div>
+                            </div>{" "}
+                          </div>
+                          <br />
+                          <div className="formButtonDiv">
+                            <button
+                              className="btn btn-primary"
+                              onClick={() => setShowFormNo(2)}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleThirdForm}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+
+                    {showFormNo === 4 ? (
+                      <div className="formContainer form-4">
+                        <h3 className="Detail"> PAN details</h3>
+                        <hr></hr>
+                        <form>
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputEmail1"
+                              className="form-label"
+                            >
+                              PAN Number
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              name="pan"
+                              value={employeeData4.pan}
+                              onChange={handleFourthFormInput}
+                            />
+                            <div id="emailHelp" className="form-text">
+                              Hint: HQTPD0461E
+                            </div>
+                            <p></p>
+                          </div>
+                          <div id="panError"></div>
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputPassword1"
+                              className="form-label"
+                            >
+                              PF UAN Number
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputPassword1"
+                              name="pf"
+                              value={employeeData4.pf}
+                              onChange={handleFourthFormInput}
+                            />
+                            <div id="emailHelp" className="form-text">
+                              Hint: It is 12 digit number.
+                            </div>
+                            <p></p>
+                          </div>
+                          <div id="pfError"></div>
+                          <div className="formButtonDiv">
+                            <button
+                              className="btn btn-primary"
+                              onClick={() => setShowFormNo(3)}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleFourthForm}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    {showFormNo === 5 ? (
+                      <div className="formContainer form-4">
+                        <h3 className="Detail">Create employee account</h3>
+                        <hr></hr>
+                        <div id="showErrorMsg"></div>
+                        <form>
+                          {}
+                          <div className="mb-3">
+                            <div id="errorMsg"></div>
+                            <label
+                              htmlFor="exampleInputempID"
+                              className="form-label"
+                            >
+                              Employee ID
+                            </label>
+                            <input
+                              type="empId"
+                              className="form-control"
+                              id="exampleInputempID"
+                              name="empId"
+                              value={employeeData5.empId}
+                              onChange={handleFifthFormInput}
+                            />
+                            <div id="emailHelp" className="form-text">
+                              Hint : UISPL0016
+                            </div>
+                            <p></p>
+                          </div>
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputempID"
+                              className="form-label"
+                            >
+                              Password
+                            </label>
+                            <div className="box">
+                              <input
+                                type="password"
+                                className="form-control"
+                                name="tempPassword"
+                                value={employeeData5.tempPassword}
+                                onChange={handleFifthFormInput}
+                                id="employeePassword"
+                              />
+                              <div id="emailHelp" className="form-text">
+                                Hint : Password must be same as Emplooyee Id
+                              </div>
+                            </div>
+                          </div>
+                          <input
+                            type="checkbox"
+                            onChange={showPasswordFunction}
+                            className="showPass"
+                          />{" "}
+                          Show Password
+                          <br /> <br />
+                          <div className="formButtonDiv">
+                            <button
+                              className="btn btn-primary"
+                              onClick={() => setShowFormNo(4)}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleFifthForm}
+                            >
+                              Next
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                    {showFormNo === 6 ? (
+                      <div className="formContainer form-3">
+                        <h3 className="Detail"> Payment details</h3>
+                        <hr></hr>
+                        <form>
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputpaymenttype"
+                              className="form-label"
+                            >
+                              Payment Type
+                            </label>
+                            <select
+                              className="form-select mt-3"
+                              required
+                              name="paymentType"
+                              onChange={handleSixthFormInput}
+                            >
+                              <option selected disabled value="">
+                                Payment Type
+                              </option>
+                              <option value="NEFT transfer">
+                                NEFT transfer
+                              </option>
+                            </select>
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputbankName"
+                              className="form-label"
+                            >
+                              Bank Name
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputaccNumber1"
+                              name="bankName"
+                              onChange={handleSixthFormInput}
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputbranchName"
+                              className="form-label"
+                            >
+                              Branch Name
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputbranchName"
+                              name="bankBranch"
+                              onChange={handleSixthFormInput}
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputifscCode"
+                              className="form-label"
+                            >
+                              IFSC Code
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputifscCode"
+                              name="ifscCode"
+                              onChange={handleSixthFormInput}
+                            />
+                            <p></p>
+                          </div>
+                          {/* <div id="ifscError"></div> */}
+                          <div className="mb-3">
+                            <label
+                              htmlFor="exampleInputaccNumber1"
+                              className="form-label"
+                            >
+                              Account Number
+                            </label>
+                            <input
+                              type="text"
+                              className="form-control"
+                              id="exampleInputaccNumber1"
+                              name="accountNumber"
+                              onChange={handleSixthFormInput}
+                            />
+                            <p></p>
+                          </div>
+                          <div className="formButtonDiv">
+                            {" "}
+                            <button
+                              className="btn btn-primary"
+                              onClick={() => setShowFormNo(5)}
+                            >
+                              Previous
+                            </button>
+                            <button
+                              type="submit"
+                              className="btn btn-primary"
+                              onClick={handleSixthForm}
+                            >
+                              Finish
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </div>
+      {/* </div> */}
     </>
   )
 }

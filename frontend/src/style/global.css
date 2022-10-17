@@ -502,10 +502,10 @@ input .larger {
 .formContainer {
   border: 1px solid #f7eeee;
   background: #f7eeee;
-  padding: 80px;
+  padding: 70px;
   box-shadow: 10px 10px 10px;
   margin-bottom: 45px;
-  width: 120%;
+  width: 100%;
 }
 /* carousel END*/
 /*HR ADMIN CODE*/
@@ -766,11 +766,6 @@ td {
 }
 /*Family form code*/
 
-.mb-3 {
-  margin-bottom: 1rem !important;
-  margin-left: 10px;
-}
-
 .famDiv {
   width: 261px;
   margin-left: 10px;
@@ -806,6 +801,9 @@ td {
 #famInput,
 #famInput1 {
   margin: 0px 5px 0px 12px;
+}
+.mb-3 p{
+  display: none;
 }
 
 #spouse {
@@ -926,9 +924,9 @@ H .box {
   display: flex;
 }
 
-.sectionClass {
+/* .sectionClass {
   margin: 70px auto;
-}
+} */
 
 .contryCode {
   width: 140px;
@@ -944,10 +942,6 @@ H .box {
   border-radius: 20px;
   background-color: #f7eeee;
   box-shadow: 10px 10px #bbb9eb;
-}
-
-.mb-3 p {
-  display: none;
 }
 
 .tab {
@@ -1113,5 +1107,9 @@ H .box {
   }
   .ecommerce-wrapper .ecom-ul ul li {
     font-size: 16px;
+  }
+
+  .formContainer {
+    padding: 18px;
   }
 }

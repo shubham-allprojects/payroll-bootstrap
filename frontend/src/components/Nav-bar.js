@@ -164,6 +164,15 @@ function ColorSchemesExample() {
                   </li>
                 </>
               )}
+              {user && user.success === true ? (
+                <div className="nav-item">
+                  <span onClick={logout} className="nav-link">
+                    Logout
+                  </span>
+                </div>
+              ) : (
+                ""
+              )}
             </ul>
           </div>
         </div>
