@@ -1243,7 +1243,7 @@ const Superadmin = location => {
                               </div>
                             </div>
 
-                            <div className="mb-3 famDiv">
+                            <div className="mb-3 famDiv mt-5">
                               <div className="childCheckBox">
                                 <input
                                   type="checkbox"
