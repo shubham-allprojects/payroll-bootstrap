@@ -1394,9 +1394,10 @@ const Superadmin = location => {
                               </div>
                             </div>
                           </div>
+
                           <div id="newDiv">
-                            <div className="familyInfo" id="parent">
-                              <div className="mb-3 famDiv">
+                            <div className="row" id="parent">
+                              <div className="mb-3 famDiv col-md-6">
                                 <label
                                   htmlFor="exampleInputOccupation"
                                   className="form-label"
@@ -1414,7 +1415,7 @@ const Superadmin = location => {
                                 <p></p>
                               </div>
 
-                              <div className="mb-3 famDiv">
+                              <div className="mb-3 famDiv col-md-6">
                                 <label
                                   htmlFor="exampleInputDOB"
                                   className="form-label"
@@ -1431,9 +1432,9 @@ const Superadmin = location => {
                                 />
                                 <p></p>
                               </div>
-                            </div>{" "}
-                            <div className="familyInfo" id="parent">
-                              <div className="mb-3 famDiv">
+                            </div>
+                            <div className="row" id="parent">
+                              <div className="mb-3 famDiv col-md-6">
                                 <label
                                   htmlFor="exampleInputOccupation"
                                   className="form-label"
@@ -1451,7 +1452,7 @@ const Superadmin = location => {
                                 <p></p>
                               </div>
 
-                              <div className="mb-3 famDiv">
+                              <div className="mb-3 famDiv col-md-6">
                                 <label
                                   htmlFor="exampleInputDOB"
                                   className="form-label"
@@ -1468,7 +1469,7 @@ const Superadmin = location => {
                                 />
                                 <p></p>
                               </div>
-                            </div>{" "}
+                            </div>
                           </div>
                           <br />
                           <div className="formButtonDiv">
