@@ -766,17 +766,17 @@ td {
 }
 /*Family form code*/
 
-.famDiv {
+/* .famDiv {
   width: 261px;
   margin-left: 10px;
-}
+} */
 
 .famRadioBtn {
   border: 1px solid #ccc;
   padding: 8px 4px 5px;
   border-radius: -1px;
   margin-bottom: 20px;
-  width: 258px;
+  width: 100%;
   border-radius: 5px;
 }
 

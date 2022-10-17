@@ -1085,11 +1085,10 @@ const Superadmin = location => {
                           </div>
 
                           <div className="mb-3">
-                          
                             <div className="row justify-content-start">
-                            <label htmlFor="Role" className="form-label mb-3">
-                              Work Mode
-                            </label>
+                              <label htmlFor="Role" className="form-label mb-3">
+                                Work Mode
+                              </label>
                               <div className="col-lg-5 col-md-6">
                                 <input
                                   type="radio"
@@ -1177,64 +1176,70 @@ const Superadmin = location => {
                             </div>
                           </div>
                           <div id="spouse">
-                            <div className="familyInfo">
-                              <div className="mb-3 famDiv">
-                                <label
-                                  htmlFor="exampleInputOccupation"
-                                  className="form-label"
-                                >
-                                  Name of Spouse
-                                </label>
-                                <input
-                                  type="text"
-                                  className="form-control"
-                                  id="exampleInputNameofSpouse"
-                                  name="NameofSpouse"
-                                  value={employeeData3.NameofSpouse}
-                                  onChange={handleThirdFormInput}
-                                />
-                                <p></p>
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputOccupation"
+                                    className="form-label"
+                                  >
+                                    Name of Spouse
+                                  </label>
+                                  <input
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputNameofSpouse"
+                                    name="NameofSpouse"
+                                    value={employeeData3.NameofSpouse}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                  <p></p>
+                                </div>
                               </div>
 
-                              <div className="mb-3 famDiv">
-                                <label
-                                  htmlFor="exampleInputnumberOfPassword"
-                                  className="form-label"
-                                >
-                                  Relationship
-                                </label>
-                                <select
-                                  className="relationClass"
-                                  required
-                                  value={employeeData3.relationship}
-                                  name="relationship"
-                                  onChange={handleThirdFormInput}
-                                >
-                                  <option hidden value="">
-                                    {" "}
+                              <div className="col-md-6">
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputnumberOfPassword"
+                                    className="form-label"
+                                  >
                                     Relationship
-                                  </option>
-                                  <option value="Husband">Husband </option>
-                                  <option value="Wife">Wife</option>
-                                </select>
+                                  </label>
+                                  <select
+                                    className="relationClass"
+                                    required
+                                    value={employeeData3.relationship}
+                                    name="relationship"
+                                    onChange={handleThirdFormInput}
+                                  >
+                                    <option hidden value="">
+                                      {" "}
+                                      Relationship
+                                    </option>
+                                    <option value="Husband">Husband </option>
+                                    <option value="Wife">Wife</option>
+                                  </select>
+                                </div>
                               </div>
 
-                              <div className="mb-3 famDiv">
-                                <label
-                                  htmlFor="exampleInputDOB"
-                                  className="form-label"
-                                >
-                                  Date Of Birth
-                                </label>
-                                <input
-                                  type="date"
-                                  className="form-control"
-                                  id="exampleInputDOB1"
-                                  name="DOB"
-                                  value={employeeData3.DOB}
-                                  onChange={handleThirdFormInput}
-                                />
-                                <p></p>
+                              <div className="col-md-6">
+                                <div className="mb-3 famDiv">
+                                  <label
+                                    htmlFor="exampleInputDOB"
+                                    className="form-label"
+                                  >
+                                    Date Of Birth
+                                  </label>
+                                  <input
+                                    type="date"
+                                    className="form-control"
+                                    id="exampleInputDOB1"
+                                    name="DOB"
+                                    value={employeeData3.DOB}
+                                    onChange={handleThirdFormInput}
+                                  />
+                                  <p></p>
+                                </div>
                               </div>
                             </div>
 
@@ -1264,8 +1269,14 @@ const Superadmin = location => {
                             </div>
                             <br />
 
-                            <div id="children">
-                              <div className="familyInfo child1" id="child1">
+                            <div
+                              id="children"
+                              className="row justify-content-center"
+                            >
+                              <div
+                                className="familyInfo child1 col-md-6"
+                                id="child1"
+                              >
                                 <div className="mb-3 famDiv">
                                   <label
                                     htmlFor="exampleInput Child1"
@@ -1321,9 +1332,12 @@ const Superadmin = location => {
                                   />
                                   <p></p>
                                 </div>
-                              </div>{" "}
-                              <br />
-                              <div className="familyInfo child2" id="child2">
+                              </div>
+
+                              <div
+                                className="familyInfo child2 col-md-6 mt-5 mt-md-0"
+                                id="child2"
+                              >
                                 <div className="mb-3 famDiv">
                                   <label
                                     htmlFor="exampleInputChild2"
@@ -1377,7 +1391,7 @@ const Superadmin = location => {
                                     onChange={handleThirdFormInput}
                                   />
                                 </div>
-                              </div>{" "}
+                              </div>
                             </div>
                           </div>
                           <div id="newDiv">
